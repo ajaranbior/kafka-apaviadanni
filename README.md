@@ -33,13 +33,3 @@ hand-reviewed list in `assets/orthography.js`, found by checking the book agains
 тарашкевіца Hunspell dictionary ([spell-be-tarask](https://github.com/375gnu/spell-be-tarask),
 CC BY-SA). Font size, theme, orthography and the last reading position are remembered per
 browser.
-
-## Publishing
-
-GitHub Pages serves the repository root of `main` (Settings → Pages → Deploy from a branch →
-`main`, `/ (root)`); `.nojekyll` makes it serve the files as they are. For search engines the
-page carries a description, a canonical URL, link-preview tags with `assets/og.png`, and
-`robots.txt` / `sitemap.xml`. The works share one address (`#/…` positions aren't separate
-pages for search engines), so the page is indexed with «Ператварэнне», which it opens on. The
-stylesheet and scripts are linked with `?v=N` in `index.html`; raise the number when they
-change, so browsers don't keep a cached old copy next to the new page.
