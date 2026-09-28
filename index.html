@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="be">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кафка па-беларуску: «Ператварэнне», «Прысуд» і іншыя апавяданні</title>
+<meta name="description" content="Чытаць Франца Кафку па-беларуску: «Ператварэнне» («Метамарфозы»), «Прысуд», «У калоніі для зняволеных», «Перад законам» і іншыя апавяданні ў перакладзе Лявона Баршчэўскага. Чытанка з наркамаўкай, тарашкевіцай і лацінкай.">
+<link rel="canonical" href="https://ajaranbior.github.io/kafka-apaviadanni/">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#f2f1ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131519" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="be_BY">
+<meta property="og:site_name" content="Кафка па-беларуску">
+<meta property="og:title" content="Кафка па-беларуску: «Ператварэнне», «Прысуд» і іншыя апавяданні">
+<meta property="og:description" content="Апавяданні і мініяцюры Франца Кафкі ў перакладзе Лявона Баршчэўскага — наркамаўкай, тарашкевіцай або лацінкай.">
+<meta property="og:url" content="https://ajaranbior.github.io/kafka-apaviadanni/">
+<meta property="og:image" content="https://ajaranbior.github.io/kafka-apaviadanni/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Кафка па-беларуску",
+  "url": "https://ajaranbior.github.io/kafka-apaviadanni/",
+  "inLanguage": "be",
+  "about": {
+    "@type": "Book",
+    "name": "Прысуд: апавяданні і мініяцюры",
+    "author": { "@type": "Person", "name": "Франц Кафка" },
+    "translator": { "@type": "Person", "name": "Лявон Баршчэўскі" },
+    "publisher": { "@type": "Organization", "name": "Мастацкая літаратура" },
+    "datePublished": "1996",
+    "inLanguage": "be",
+    "sameAs": "https://knihi.com/Franc_Kafka/Prysud_apaviadanni_i_minijaciury.html"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vollkorn:ital@0;1&family=Commissioner:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=7">
+</head>
+<body>
+<nav class="toc" id="toc" aria-label="Змест" hidden>
+  <div class="toc-head">
+    <strong>Змест</strong>
+    <button class="icon-btn" id="toc-close" aria-label="Схаваць змест" title="Схаваць змест">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+    </button>
+  </div>
+  <div class="toc-search">
+    <label class="visually-hidden" for="toc-filter">Шукаць твор</label>
+    <input type="search" id="toc-filter" placeholder="Шукаць твор…" autocomplete="off" spellcheck="false">
+  </div>
+  <div id="toc-list"></div>
+  <p class="toc-empty" id="toc-empty" hidden>Нічога не знойдзена</p>
+  <div class="toc-foot">
+    <p class="ortho-note" id="ortho-note" hidden>Аўтаматычная канверсія з наркамаўкі — магчымыя недакладнасці.</p>
+    <p class="source">Тэкст паводле: <a href="https://knihi.com/Franc_Kafka/Prysud_apaviadanni_i_minijaciury.html" target="_blank" rel="noopener">© Беларуская Палічка</a></p>
+  </div>
+</nav>
+<div class="scrim" id="scrim" hidden></div>
+
+<div class="shell" id="shell">
+<header class="bar">
+  <div class="progress" aria-hidden="true"><div class="progress-bar" id="progress"></div></div>
+  <button class="icon-btn" id="toc-open" aria-label="Змест" title="Змест (t)" aria-controls="toc" aria-expanded="false" disabled>
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+  </button>
+  <div class="bar-title">
+    <span class="bar-book">Кафка · Прысуд</span>
+    <button class="bar-work" id="bar-work" type="button" title="Да пачатку твора" aria-hidden="true" tabindex="-1"></button>
+  </div>
+  <div class="bar-tools">
+    <label class="visually-hidden" for="ortho">Правапіс</label>
+    <select id="ortho" class="ortho" title="Правапіс">
+      <option value="narkam">Наркамаўка</option>
+      <option value="tarask">Тарашкевіца</option>
+      <option value="lacinka">Łacinka</option>
+    </select>
+    <button class="icon-btn" id="font-down" aria-label="Меншы шрыфт">A−</button>
+    <button class="icon-btn" id="font-up" aria-label="Большы шрыфт">A+</button>
+    <button class="icon-btn" id="theme" aria-label="Тэма">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z" fill="currentColor"/></svg>
+    </button>
+  </div>
+</header>
+
+
+<main id="main">
+  <section class="loader" id="loader" hidden>
+    <h1>Франц Кафка<br><span>Прысуд</span></h1>
+    <p class="lede">Апавяданні і мініяцюры ў перакладзе Лявона Баршчэўскага.</p>
+    <p class="about">Кафка па-беларуску: «Ператварэнне» (яго называюць таксама «Метамарфозы», «Пераўтварэнне»), «Прысуд», «У калоніі для зняволеных», «Перад законам», «Вясковы лекар», «Галадамор», «Імператарскае пасланне» і яшчэ больш за трыццаць апавяданняў і мініяцюр. Тэкст можна чытаць наркамаўкай, тарашкевіцай або лацінкай.</p>
+    <p class="error" role="alert">Не ўдалося загрузіць кнігу. Паспрабуйце абнавіць старонку.</p>
+    <p class="source">Кнігу можна прачытаць і на сайце <a href="https://knihi.com/Franc_Kafka/Prysud_apaviadanni_i_minijaciury.html" target="_blank" rel="noopener">Беларускай Палічкі</a> (knihi.com).</p>
+  </section>
+
+  <article class="reader" id="reader" hidden>
+    <header class="work-head">
+      <p class="work-group" id="work-group"></p>
+      <h1 id="work-title"></h1>
+      <p class="work-meta" id="work-meta"></p>
+    </header>
+    <nav class="parts" id="parts" aria-label="Часткі"></nav>
+    <div class="text" id="text"></div>
+    <footer class="pager">
+      <button class="pager-btn" id="prev"><span>←</span><em id="prev-title"></em></button>
+      <button class="pager-btn next" id="next"><em id="next-title"></em><span>→</span></button>
+    </footer>
+  </article>
+</main>
+</div>
+
+<script src="assets/orthography.js?v=7"></script>
+<script src="assets/app.js?v=7"></script>
+</body>
+</html>

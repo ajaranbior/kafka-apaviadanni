@@ -1,0 +1,5 @@
+# The scanned book and its OCR text stay local; the site's text is book/book.json
+*.pdf
+*.djvu
+*.txt
+!robots.txt
