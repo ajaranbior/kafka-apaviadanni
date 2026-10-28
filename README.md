@@ -33,3 +33,7 @@ hand-reviewed list in `assets/orthography.js`, found by checking the book agains
 тарашкевіца Hunspell dictionary ([spell-be-tarask](https://github.com/375gnu/spell-be-tarask),
 CC BY-SA). Font size, theme, orthography and the last reading position are remembered per
 browser.
+
+Preposition softening also covers `без/бяз`, `праз`, and `цераз` (праз дзве → празь дзьве).
+It excludes г/ґ, к, х. Initial і still follows the converter's existing approximation:
+its stress is not fully covered by the book's `firstStressed` list.

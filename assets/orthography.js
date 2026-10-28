@@ -7,7 +7,7 @@
 // Тарашкевіца here covers the systematic differences:
 //   * assimilative softness written with ь: снег → сьнег, шчасце → шчасьце,
 //     дзве → дзьве, насенне → насеньне, вяселле → вясельле, жыццё → жыцьцё
-//   * the preposition з → зь before a soft sound: з ім → зь ім
+//   * prepositions з, без/бяз, праз, цераз soften before a soft sound: праз дзве → празь дзьве
 //   * не → ня, без → бяз before a word stressed on its first syllable: ня ведаю, не было.
 //     Stress can't be guessed from spelling, so the book brings its own word list
 //     (book.json "firstStressed") through setFirstStressed().
@@ -171,9 +171,12 @@
         return pre + matchCase(word, NE_BEZ[word.toLowerCase()]) + sp;
       });
     out = out.replace(WORD, (w) => softenWord(loanword(w)));
-    // з ім → зь ім, з сябрам → зь сябрам (the preposition only)
-    out = out.replace(/(^|[^А-Яа-яЁёІіЎў'’ʼ])([Зз])(\s+)(?=([А-Яа-яЁёІіЎў]+))/g, (m, pre, z, sp, next) =>
-      startsSoft(next) ? `${pre}${z}${z === "З" && next === next.toUpperCase() && next.length > 1 ? "Ь" : "ь"}${sp}` : m);
+    // Apply after word softening, so дзьве and сьлёзы also trigger the rule.
+    out = out.replace(/(^|[^А-Яа-яЁёІіЎўҐґ'’ʼ-])(з|без|бяз|праз|цераз)(\s+)(?=([А-Яа-яЁёІіЎўҐґ]+))/gi, (m, pre, word, sp, next) => {
+      if (!startsSoft(next)) return m;
+      const caps = word === word.toUpperCase() && (word.length > 1 || (next.length > 1 && next === next.toUpperCase()));
+      return `${pre}${word}${caps ? "Ь" : "ь"}${sp}`;
+    });
     return out;
   }
 
