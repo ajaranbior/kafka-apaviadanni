@@ -5,6 +5,8 @@
   const $ = (id) => document.getElementById(id);
   const PREFS_KEY = "kafka-reader:prefs";
   const POS_KEY = "kafka-reader:pos";
+  const isReload = (performance.getEntriesByType("navigation")[0] || {}).type === "reload";
+  history.scrollRestoration = "manual";  // route() places the page itself
 
   let book = null;
   let works = [];        // flat list: {work, group, index}
@@ -23,6 +25,12 @@
   function writeJSON(key, value) {
     try { localStorage.setItem(key, JSON.stringify(value)); } catch { /* not critical */ }
   }
+  // reading position per work, as a fraction of its height: {last: id, works: {id: fraction}}
+  const positions = (() => {
+    const pos = readJSON(POS_KEY);
+    if (pos.works) return pos;
+    return { last: pos.id, works: pos.id ? { [pos.id]: pos.scroll } : {} };  // older {id, scroll} form
+  })();
 
   // ---------- loading ----------
   function validate(data) {
@@ -173,28 +181,33 @@
     if (location.hash === hash) route(); else location.hash = hash;
   }
 
+  let firstRoute = true;
   function route() {
     if (!book) return;
     let { id, part } = parseHash();
-    let restoreScroll = null;
     if (!id) {
-      const pos = readJSON(POS_KEY);
-      id = pos.id && works.some((w) => w.work.id === pos.id) ? pos.id : (book.landing || works[0].work.id);
-      restoreScroll = pos.id === id ? pos.scroll : null;
+      id = positions.last && works.some((w) => w.work.id === positions.last) ? positions.last : (book.landing || works[0].work.id);
       history.replaceState(null, "", `#/${id}`);
     }
+    // a reload keeps the reader where they were, even on a #/<work>/<part> link
+    if (firstRoute && isReload) part = null;
+    firstRoute = false;
     const entry = works.find((w) => w.work.id === id) || works[0];
-    if (current !== entry) render(entry);
+    const switched = current !== entry;
+    if (switched && current) savePosition();  // the work being left
+    if (switched) render(entry);
+    current = entry;
     if (part) {
       const target = document.getElementById(`part-${part}`);
       if (target) target.scrollIntoView();
-    } else if (restoreScroll != null) {
-      requestAnimationFrame(() => window.scrollTo(0, restoreScroll * docHeight()));
-    } else if (current !== entry || !part) {
+      savePosition();
+    } else if (switched && positions.works[entry.work.id] != null) {
+      const saved = positions.works[entry.work.id];
+      requestAnimationFrame(() => { window.scrollTo(0, saved * docHeight()); savePosition(); });
+    } else {
       window.scrollTo(0, 0);
+      savePosition();
     }
-    current = entry;
-    savePosition();
   }
 
   function render(entry) {
@@ -262,7 +275,9 @@
   let saveTimer = null;
   function savePosition() {
     if (!current) return;
-    writeJSON(POS_KEY, { id: current.work.id, scroll: scrollY / docHeight() });
+    positions.last = current.work.id;
+    positions.works[current.work.id] = scrollY / docHeight();
+    writeJSON(POS_KEY, positions);
   }
   function onScroll() {
     $("progress").style.width = `${Math.min(100, (scrollY / docHeight()) * 100)}%`;
