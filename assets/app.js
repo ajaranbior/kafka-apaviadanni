@@ -66,6 +66,14 @@
     if (window.Orthography) Orthography.setFirstStressed(book.firstStressed);
     works = [];
     book.groups.forEach((group) => group.works.forEach((work) => works.push({ work, group, index: works.length })));
+    // Keep reading progress when a work's URL spelling changes.
+    works.forEach(({ work }) => (work.aliases || []).forEach((alias) => {
+      if (positions.last === alias) positions.last = work.id;
+      if (positions.works[work.id] == null && positions.works[alias] != null) {
+        positions.works[work.id] = positions.works[alias];
+      }
+      delete positions.works[alias];
+    }));
     buildToc();
     $("toc-filter").value = "";
     filterToc();
@@ -185,6 +193,11 @@
   function route() {
     if (!book) return;
     let { id, part } = parseHash();
+    const aliased = works.find(({ work }) => (work.aliases || []).includes(id));
+    if (aliased) {
+      id = aliased.work.id;
+      history.replaceState(null, "", `#/${id}${part ? "/" + part : ""}`);
+    }
     if (!id) {
       id = positions.last && works.some((w) => w.work.id === positions.last) ? positions.last : (book.landing || works[0].work.id);
       history.replaceState(null, "", `#/${id}`);

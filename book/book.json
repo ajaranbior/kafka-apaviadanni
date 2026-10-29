@@ -162,7 +162,8 @@
      ]
     },
     {
-     "id": "vykryccio-machliara",
+     "id": "vykryccio-machlara",
+     "aliases": ["vykryccio-machliara"],
      "title": "Выкрыццё махляра",
      "date": null,
      "dedication": null,
@@ -185,7 +186,8 @@
      ]
     },
     {
-     "id": "niechakanaia-prahulka",
+     "id": "niechakanaja-prahulka",
+     "aliases": ["niechakanaia-prahulka"],
      "title": "Нечаканая прагулка",
      "date": "1922",
      "dedication": null,
@@ -231,7 +233,8 @@
      ]
     },
     {
-     "id": "pakuty-staroha-kavaliera",
+     "id": "pakuty-staroha-kavalera",
+     "aliases": ["pakuty-staroha-kavaliera"],
      "title": "Пакуты старога кавалера",
      "date": "1911",
      "dedication": null,
@@ -246,7 +249,8 @@
      ]
     },
     {
-     "id": "handliar",
+     "id": "handlar",
+     "aliases": ["handliar"],
      "title": "Гандляр",
      "date": "1907?",
      "dedication": null,
@@ -274,7 +278,8 @@
      ]
     },
     {
-     "id": "razhublieny-pozirk-z-akna",
+     "id": "razhubleny-pozirk-z-akna",
+     "aliases": ["razhublieny-pozirk-z-akna"],
      "title": "Разгублены позірк з акна",
      "date": "1907?",
      "dedication": null,
@@ -306,7 +311,8 @@
      ]
     },
     {
-     "id": "prabiahannie-liudziej",
+     "id": "prabiahannie-ludziej",
+     "aliases": ["prabiahannie-liudziej"],
      "title": "Прабяганне людзей",
      "date": "1907",
      "dedication": null,
@@ -354,7 +360,8 @@
      ]
     },
     {
-     "id": "adchiliennie-zaliacannia",
+     "id": "adchilennie-zalacannia",
+     "aliases": ["adchiliennie-zaliacannia"],
      "title": "Адхіленне заляцання",
      "date": "1906?",
      "dedication": null,
@@ -695,7 +702,8 @@
      ]
     },
     {
-     "id": "u-kalonii-dlia-zniavolienych",
+     "id": "u-kalonii-dla-zniavolenych",
+     "aliases": ["u-kalonii-dlia-zniavolienych"],
      "title": "У калоніі для зняволеных",
      "date": "1919",
      "dedication": null,
@@ -786,7 +794,8 @@
      ]
     },
     {
-     "id": "viaskovy-liekar",
+     "id": "viaskovy-lekar",
+     "aliases": ["viaskovy-liekar"],
      "title": "Вясковы лекар",
      "date": "1917",
      "dedication": null,
@@ -803,7 +812,8 @@
      ]
     },
     {
-     "id": "na-halierei",
+     "id": "na-halerei",
+     "aliases": ["na-halierei"],
      "title": "На галерэі",
      "date": "1917?",
      "dedication": null,
@@ -914,7 +924,8 @@
      ]
     },
     {
-     "id": "susiedniaia-vioska",
+     "id": "susiedniaja-vioska",
+     "aliases": ["susiedniaia-vioska"],
      "title": "Суседняя вёска",
      "date": null,
      "dedication": null,
@@ -928,7 +939,8 @@
      ]
     },
     {
-     "id": "impieratarskaie-paslannie",
+     "id": "imperatarskaje-paslannie",
+     "aliases": ["impieratarskaie-paslannie"],
      "title": "Імператарскае пасланне",
      "date": "1917",
      "dedication": null,
@@ -943,7 +955,8 @@
      ]
     },
     {
-     "id": "klopat-backi-siami",
+     "id": "klopat-backi-siamji",
+     "aliases": ["klopat-backi-siami"],
      "title": "Клопат бацькі сям'і",
      "date": "1917",
      "dedication": null,
@@ -1077,7 +1090,8 @@
    "title": "Са зборніка «Галадамор» (1924)",
    "works": [
     {
-     "id": "piershaia-pakuta",
+     "id": "piershaja-pakuta",
+     "aliases": ["piershaia-pakuta"],
      "title": "Першая пакута",
      "date": "1921/22",
      "dedication": null,
@@ -1241,7 +1255,8 @@
      ]
     },
     {
-     "id": "razmova-z-pianym",
+     "id": "razmova-z-pjanym",
+     "aliases": ["razmova-z-pianym"],
      "title": "Размова з п'яным",
      "date": "1909",
      "dedication": null,
@@ -1343,7 +1358,8 @@
      ]
     },
     {
-     "id": "novyia-sviacilniki",
+     "id": "novyja-sviacilniki",
+     "aliases": ["novyia-sviacilniki"],
      "title": "Новыя свяцільнікі",
      "date": "1917",
      "dedication": null,
@@ -1406,7 +1422,8 @@
      ]
     },
     {
-     "id": "pramietej",
+     "id": "prametej",
+     "aliases": ["pramietej"],
      "title": "Праметэй",
      "date": "1918",
      "dedication": null,

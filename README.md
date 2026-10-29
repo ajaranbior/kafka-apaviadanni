@@ -21,6 +21,10 @@ in the book in a contents sidebar (`t`, collapsible, with a title search on `/`)
 move between works; multi-part works get part links. Once a work's heading scrolls away,
 its title (and current part) appears in the top bar; clicking it returns to the top.
 Positions look like `#/pieratvarennie/2`.
+URL IDs use ASCII łacinka: `j` after vowels and apostrophes, and `la/le/lu`
+for ля/ле/лю; diacritics are omitted, with `sh`, `zh`, and `ch` retained
+for ш, ж, and ч (х also uses `ch`). For example, `#/u-kalonii-dla-zniavolenych`.
+Previous spellings in each work's `aliases` still open the work and preserve reading progress.
 
 The text can be shown as printed (наркамаўка), or converted automatically to тарашкевіца or
 łacinka. Łacinka is made from the тарашкевіца version (снег → сьнег → śnieh,
