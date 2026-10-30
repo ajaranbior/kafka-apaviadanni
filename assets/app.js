@@ -17,6 +17,17 @@
   // book text in the chosen orthography (наркамаўка as printed, тарашкевіца or łacinka converted)
   const T = (text) => (window.Orthography ? Orthography.convert(text, prefs.ortho) : text);
   const LANG = { narkam: "be", tarask: "be-tarask", lacinka: "be-Latn" };
+  // Homepage links choose an orthography once; shared reader URLs stay clean.
+  const entryURL = new URL(location.href);
+  if (entryURL.searchParams.has("ortho")) {
+    const mode = entryURL.searchParams.get("ortho");
+    if (Object.hasOwn(LANG, mode)) {
+      prefs.ortho = mode;
+      writeJSON(PREFS_KEY, prefs);
+    }
+    entryURL.searchParams.delete("ortho");
+    history.replaceState(history.state, "", entryURL.pathname + entryURL.search + entryURL.hash);
+  }
   const SITE_TITLE = document.title;
   const SITE_NAME = "Кафка па-беларуску";  // after a work's title in the tab
   function readJSON(key) {

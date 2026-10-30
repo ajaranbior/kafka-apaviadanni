@@ -38,6 +38,13 @@ hand-reviewed list in `assets/orthography.js`, found by checking the book agains
 CC BY-SA). Font size, theme, orthography and the last reading position are remembered per
 browser.
 
+Homepage links can select an orthography with `?ortho=narkam`, `?ortho=tarask`,
+or `?ortho=lacinka` (before any `#/work` fragment). A valid choice overrides and
+updates the saved preference. The reader removes the parameter immediately with
+`history.replaceState`, preserving the story fragment and any other parameters,
+so links copied afterward use the ordinary reader URL. Without the parameter,
+the reader uses the saved preference, or наркамаўка on a first visit.
+
 Preposition softening also covers `без/бяз`, `праз`, and `цераз` (праз дзве → празь дзьве).
 It excludes г/ґ, к, х. Initial і still follows the converter's existing approximation:
 its stress is not fully covered by the book's `firstStressed` list.
